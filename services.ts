@@ -87,9 +87,15 @@ export function printSchool(school: School): void {
     _.sortBy(school.classes, classe => classe.name).forEach(classe => {        
         console.log(`Class ${++classIndex}: ${classe.name}`);
         console.log(`Teacher: ${classe.teacher.fullName()}, ${classe.teacher.professions.join(', ')}`);
-        let classe_student_sort:Student[] = _.sortBy(classe.students, student => student.lastName && student.firstName)
-        for (let studentIndex = 0; studentIndex < classe_student_sort.length; studentIndex++) {
-            console.log(`${studentIndex + 1}: ${classe_student_sort[studentIndex].fullName()}: ${classe_student_sort[studentIndex].age()}`);
+        classe.students.sort((a, b) => {
+            const result = a.lastName.localeCompare(b.lastName);
+  
+            return result !== 0 ? result : a.firstName.localeCompare(b.firstName);
+          });
+        // classe.students.forEach(student => console.log(student))
+        // let classe_student_sort:Student[] = _.sortBy(classe.students, student => student.firstName && student.lastName  );
+        for (let studentIndex = 0; studentIndex < classe.students.length; studentIndex++) {
+            console.log(`${studentIndex + 1}: ${classe.students[studentIndex].fullName()}: ${classe.students[studentIndex].age()}`);
             
         }
 
