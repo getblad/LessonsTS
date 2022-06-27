@@ -92,8 +92,6 @@ export function printSchool(school: School): void {
   
             return result !== 0 ? result : a.firstName.localeCompare(b.firstName);
           });
-        // classe.students.forEach(student => console.log(student))
-        // let classe_student_sort:Student[] = _.sortBy(classe.students, student => student.firstName && student.lastName  );
         for (let studentIndex = 0; studentIndex < classe.students.length; studentIndex++) {
             console.log(`${studentIndex + 1}: ${classe.students[studentIndex].fullName()}: ${classe.students[studentIndex].age()}`);
             
