@@ -1,6 +1,7 @@
 import { School } from "./entities";
 import { getClassYoungestStudent as getClassYoungestStudentFullName, initializeSchool, initializeSchool2, printSchool, transferStudent } from "./services";
-
+import { getRandomValueFromArray } from "./helpers";
+import { Subjects } from "./constants";
 const school: School = initializeSchool();
 
 // Task 1
@@ -29,5 +30,8 @@ transferStudent('Vasya Sidorov', school.classes[1], school.classes[0]);
 printSchool(school);
 
 // Task 8
-const school2: School = initializeSchool2('VSU','Lenina, 14','+9008', 2);
+const school2: School = initializeSchool2('Licey','Ivanovo','+9008', 2);
 printSchool(school2);
+
+
+

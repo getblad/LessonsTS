@@ -82,6 +82,7 @@ export function printSchool(school: School): void {
     console.log(school.name);
     console.log(school.address);
     console.log(school.phone);
+    console.log('\nClasses\n============')
     let classIndex = 0
     _.sortBy(school.classes, classe => classe.name).forEach(classe => {        
         console.log(`Class ${++classIndex}: ${classe.name}`);
@@ -111,7 +112,7 @@ export function initializeSchool2(name:string,address:string, phone:string, numb
             students.push(createStudent(getRandomValueFromArray(firstNames), getRandomValueFromArray(lastNames), getRandomBirthDate()))
         }
         classes.push(createClassroom(getRandomValueFromArray(Subjects), createTeacher(getRandomValueFromArray(firstNames), 
-        getRandomValueFromArray(lastNames), [getRandomValueFromArray(Subjects)]),students))
+        getRandomValueFromArray(lastNames), Array.from({length: 2}, () => getRandomValueFromArray(Subjects)).filter((v, i, a) => a.indexOf(v) === i)), students))
         
     }
     return {
