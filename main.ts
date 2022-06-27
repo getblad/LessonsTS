@@ -19,6 +19,9 @@ printSchool(school);
 // Task 5
 console.log(getClassYoungestStudentFullName(school.classes[1]));
 
+// Task 6
+// services.ts
+
 // Task 7
 console.log('########################################')
 transferStudent('Vasya Sidorov', school.classes[1], school.classes[0]);
