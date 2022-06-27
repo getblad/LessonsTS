@@ -1,7 +1,6 @@
 import { School } from "./entities";
 import { getClassYoungestStudent as getClassYoungestStudentFullName, initializeSchool, initializeSchool2, printSchool, transferStudent } from "./services";
-import { getRandomValueFromArray } from "./helpers";
-import { Subjects } from "./constants";
+
 const school: School = initializeSchool();
 
 // Task 1
